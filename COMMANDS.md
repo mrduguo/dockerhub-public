@@ -7,6 +7,7 @@
 ```bash
 
 docker build -t mrduguo/public:java8-latest .
+
 docker push mrduguo/public:java8-latest
 
 ```
