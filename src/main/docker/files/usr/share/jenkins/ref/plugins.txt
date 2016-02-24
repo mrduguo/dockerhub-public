@@ -1,0 +1,21 @@
+timestamper: 1.7.4
+gradle: 1.24
+build-name-setter:1.5.1
+token-macro:1.12.1
+git: 2.4.2
+git-client:1.19.5
+ssh-credentials:1.11
+credentials:1.25
+icon-shim:2.0.3
+mailer:1.16
+matrix-project:1.6
+script-security:1.17
+scm-api:1.0
+junit:1.10
+htmlpublisher: 1.11
+workflow-step-api:1.4
+throttle-concurrents: 1.8.4
+embeddable-build-status: 1.9
+github: 1.17.1
+plain-credentials:1.1
+github-api:1.72
