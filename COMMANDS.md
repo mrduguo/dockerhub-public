@@ -25,6 +25,7 @@ docker pull mrduguo/public@sha256:4723ee1911c1b19e09ded9b43d3bf894bafdfe3eddf257
 mkdir -p ~/docker-home/jenkins
 docker run -it -p 6010:8080 -v ~/docker-home/jenkins/.ssh:/var/jenkins_home/.ssh -v ~/docker-home/jenkins/jobs:/var/jenkins_home/jobs --rm --name jenkins mrduguo/public:jenkins-latest
 curl -v http://192.168.99.100:6010/job/sandbox-github/build -X POST
+docker exec -it jenkins bash
 
 # Server
 mkdir -p /var/jenkins_home
