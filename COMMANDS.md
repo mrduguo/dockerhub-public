@@ -22,4 +22,6 @@ docker pull mrduguo/public:java8-latest
 
 docker run mrduguo/public:java8-latest java -version
 
+docker run --rm -it mrduguo/public:java8-latest bash
+
 ```
