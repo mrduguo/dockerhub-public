@@ -6,9 +6,9 @@
 
 ```bash
 
-docker build -t mrduguo/public:java8-latest .
+docker build -t mrduguo/public:javadev-latest .
 
-docker push mrduguo/public:java8-latest
+docker push mrduguo/public:javadev-latest
 
 ```
 
@@ -18,10 +18,10 @@ docker push mrduguo/public:java8-latest
 
 ```bash
 
-docker pull mrduguo/public:java8-latest
+docker pull mrduguo/public:javadev-latest
 
-docker run mrduguo/public:java8-latest java -version
+docker run mrduguo/public:javadev-latest java -version
 
-docker run --rm -it mrduguo/public:java8-latest bash
+docker run --rm -it -v ~:/root mrduguo/public:javadev-latest bash
 
 ```
