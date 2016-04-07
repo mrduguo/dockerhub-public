@@ -3,3 +3,19 @@ RUN curl -O http://mirrors.ibiblio.org/apache/maven/maven-3/3.2.5/binaries/apach
     tar xzf apache-maven-3.2.5-bin.tar.gz -C /usr/local && \
     ln -s /usr/local/apache-maven-3.2.5/bin/mvn /usr/local/bin/mvn && \
     rm -f apache-maven-3.2.5-bin.tar.gz
+
+RUN curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && \
+    unzip ngrok-stable-linux-amd64.zip && \
+    mv ngrok /usr/local/bin/ngrok && \
+    rm -f ngrok-stable-linux-amd64.zip
+
+RUN apt-get purge lxc-docker* && \
+    apt-get purge docker.io* && \
+    apt-get update && \
+    apt-get install -y apt-transport-https ca-certificates && \
+    apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
+    echo "deb https://apt.dockerproject.org/repo debian-jessie main" > /etc/apt/sources.list.d/docker.list && \
+    apt-get update && \
+    apt-get install -y docker-engine
+
+#    docker build -t mrduguo/public:javadev-latest .
