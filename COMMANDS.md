@@ -20,8 +20,12 @@ docker push mrduguo/public:javadev-latest
 
 docker pull mrduguo/public:javadev-latest
 
-docker run mrduguo/public:javadev-latest java -version
+docker run --rm mrduguo/public:javadev-latest java -version
 
-docker run --rm -it -v ~:/root mrduguo/public:javadev-latest bash
+docker run -it --rm mrduguo/public:javadev-latest bash
+
+docker run -it --rm --name javadev -v /var/run/docker.sock:/var/run/docker.sock -v ~:/root mrduguo/public:javadev-latest bash
+
+docker exec -it javadev bash
 
 ```
