@@ -9,8 +9,7 @@ RUN curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip &&
     mv ngrok /usr/local/bin/ngrok && \
     rm -f ngrok-stable-linux-amd64.zip
 
-RUN apt-get purge lxc-docker* && \
-    apt-get purge docker.io* && \
+RUN apt-get purge docker.io* && \
     apt-get update && \
     apt-get install -y apt-transport-https ca-certificates && \
     apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
