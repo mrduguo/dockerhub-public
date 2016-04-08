@@ -7,7 +7,9 @@ RUN curl -O http://mirrors.ibiblio.org/apache/maven/maven-3/3.2.5/binaries/apach
 RUN curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && \
     unzip ngrok-stable-linux-amd64.zip && \
     mv ngrok /usr/local/bin/ngrok && \
-    rm -f ngrok-stable-linux-amd64.zip
+    rm -f ngrok-stable-linux-amd64.zip && \
+    curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
+    chmod a+x /usr/local/bin/docker-compose
 
 RUN apt-get purge docker.io* && \
     apt-get update && \
