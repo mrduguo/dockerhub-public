@@ -13,7 +13,7 @@ RUN curl -O https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip &&
     
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash && \
     . ~/.nvm/nvm.sh && \
-    nvm install latest
+    nvm install node
 
 RUN apt-get purge docker.io* && \
     apt-get update && \
