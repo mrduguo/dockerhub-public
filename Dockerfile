@@ -19,4 +19,28 @@ RUN apt-get purge docker.io* && \
     apt-get update && \
     apt-get install -y docker-engine
 
+RUN echo "===> Installing python, sudo, and supporting tools..."  && \
+    apt-get update -y  &&  apt-get install --fix-missing          && \
+    DEBIAN_FRONTEND=noninteractive         \
+    apt-get install -y                     \
+        python python-yaml sudo            \
+        curl gcc python-pip python-dev libffi-dev libssl-dev  && \
+    apt-get -y --purge remove python-cffi          && \
+    pip install --upgrade cffi                     && \
+    \
+    \
+    echo "===> Installing Ansible..."   && \
+    pip install ansible                 && \
+    \
+    \
+    echo "===> Installing handy tools (not absolutely required)..."  && \
+    apt-get install -y sshpass openssh-client  && \
+    \
+    \
+    echo "===> Removing unused APT resources..."                  && \
+    apt-get -f -y --auto-remove remove \
+                 gcc python-pip python-dev libffi-dev libssl-dev  && \
+    apt-get clean                                                 && \
+    rm -rf /var/lib/apt/lists/*  /tmp/*
+
 #    docker build -t mrduguo/public:javadev-latest .
