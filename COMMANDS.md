@@ -13,6 +13,20 @@ docker push mrduguo/public:jenkins-latest
 ```
 
 
+### Run Commands
+
+
+```bash
+
+# run jenkins
+docker run -it -p 6010:8080 --rm mrduguo/public:jenkins-latest
+
+# trigger a job
+curl -v http://192.168.99.100:6010/job/sandbox-github/build -X POST
+
+```
+
+
 ### Consume Commands
 
 
